@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:text="Coloca un codigo QR en el interior del cuadro del visor."
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:padding="20sp"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center|bottom"
+                android:background="@drawable/bk_circulo_transparente"
+                android:layout_width="100sp"
+                android:layout_height="100sp"/>
+            <ImageButton
+                android:layout_weight="1"
+                android:onClick="toggleFlash"
+                android:src="@mipmap/ic_flash_on"
+                android:layout_gravity="center|bottom"
+                android:background="@drawable/bk_circulo"
+                android:layout_marginBottom="15sp"
+                android:layout_width="70sp"
+                android:layout_height="70sp"/>
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bk_fondo_codigo"
+            android:paddingLeft="15sp"
+            android:paddingRight="15sp"
+            android:paddingTop="10sp"
+            android:paddingBottom="5sp"
+            >
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Nombre del archivo"
+                android:inputType="text"></EditText>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fbExportar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_set_as" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>
